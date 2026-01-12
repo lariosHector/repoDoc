@@ -7,6 +7,6 @@ struct RepoDocCLI: ParsableCommand {
         commandName: "repodoc",
         abstract: "Generate documentation from repository structure.",
         version: "0.1.0",
-        subcommands: [Scan.self]
+        subcommands: [Scan.self, Generate.self],
     )
 }
