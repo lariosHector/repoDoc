@@ -38,4 +38,27 @@ enum ConsolePrinter {
         }
         print("")
     }
+    static func printScore(_ report: ScoreReport) {
+        print("📊 Documentation Health Score")
+        print("Score: \(report.score) / 100\n")
+
+        if report.missing.isEmpty {
+            print("✅ No missing documentation elements detected.\n")
+        } else {
+            print("❌ Missing:")
+            for m in report.missing {
+                print("  - \(m)")
+            }
+            print("")
+        }
+
+        if !report.suggestions.isEmpty {
+            print("💡 Suggestions:")
+            for s in report.suggestions {
+                print("  - \(s)")
+            }
+            print("")
+        }
+    }
+
 }

@@ -8,12 +8,12 @@
 │   └── repoDoc
 │       ├── CIDetector.swift
 │       ├── CLI
-│       │   └── Generate.swift
+│       │   ├── Generate.swift
+│       │   └── Scan.swift
 │       ├── ConsolePrinter.swift
 │       ├── DirectoryTreeBuilder.swift
 │       ├── DocGenerator.swift
 │       ├── RepoScanner.swift
-│       ├── Scan.swift
 │       ├── StackDetector.swift
 │       └── repoDocCLI.swift
 └── docs
