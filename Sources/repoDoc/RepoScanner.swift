@@ -22,7 +22,13 @@ final class RepoScanner {
     ]
 
     func scan(repoURL: URL) throws -> ScanResult {
-        let files = try listAllRelativePaths(root: repoURL)
+    
+        var files = try listAllRelativePaths(root: repoURL)
+        let gitignoreURL = repoURL.appendingPathComponent(".gitignore")
+        if FileManager.default.fileExists(atPath: gitignoreURL.path) {
+            files.insert(".gitignore")
+        }
+
 
         let found = keyFiles.filter { files.contains($0) }
         let missing = keyFiles.filter { !files.contains($0) }
